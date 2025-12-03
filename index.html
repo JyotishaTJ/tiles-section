@@ -5,13 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Full-bleed Service Tiles</title>
 <style>
-  /* Reset to ensure no body padding/margin anywhere */
-  html,body{height:100%;margin:0;padding:0;background:#07121a;}
-  :root{
-    --gap: 8px;
+  html,body{
+    height:100%;
+    margin:0;
+    padding:0;
+    background:#07121a;
+    font-family:Inter,system-ui,Arial;
   }
 
-  /* outer container stretches full width */
   .full-bleed{
     width:100%;
     min-height:100vh;
@@ -22,31 +23,26 @@
     background:#07121a;
   }
 
-  /* center the row but allow edge-to-edge visuals */
   .row{
     width:100%;
-    max-width:1600px; /* optional; set large if you want edge-to-edge even on wide screens */
+    max-width:1600px;
     display:flex;
-    gap:var(--gap);
+    gap:8px;
+    padding:0;
     box-sizing:border-box;
-    padding:0 0; /* NO side padding */
   }
 
-  /* Tiles are anchors so clickable */
   .tile{
     flex:1 1 0%;
     display:block;
     text-decoration:none;
     color:inherit;
     overflow:hidden;
-    border-radius:0;
-    min-width:220px;
-    /* ensure vertical aspect - we use aspect-ratio to maintain portrait shape */
   }
 
   .visual{
     width:100%;
-    aspect-ratio: 960 / 1450; /* keeps tall vertical ratio */
+    aspect-ratio:960/1450;
     background-size:cover;
     background-position:center;
     display:block;
@@ -54,52 +50,60 @@
     box-shadow:0 6px 18px rgba(0,0,0,0.45);
   }
 
-  .tile:hover .visual{ transform:translateY(-8px); box-shadow:0 16px 40px rgba(0,0,0,0.6); }
+  .tile:hover .visual{
+    transform:translateY(-8px);
+    box-shadow:0 16px 40px rgba(0,0,0,0.6);
+  }
 
-  /* overlay text area (optional) */
   .meta{
-    position:relative;
     padding:16px;
     background:rgba(0,0,0,0.03);
     color:#fff;
-    font-family:Inter,system-ui,Arial;
   }
-  .meta h3{ margin:0 0 8px 0; font-size:18px; letter-spacing:0.2px; }
-  .meta p{ margin:0; color:#d0dcea; font-size:13px; line-height:1.35; }
 
-  /* Responsive: on narrow screens stack vertically and use full viewport width */
+  .meta h3{
+    margin:0 0 8px 0;
+    font-size:18px;
+    font-weight:700;
+  }
+
+  .meta p{
+    margin:0;
+    color:#d0dcea;
+    font-size:13px;
+    line-height:1.35;
+  }
+
   @media (max-width:900px){
-    .row{ flex-direction:column; max-width:900px; }
-    .visual{ aspect-ratio: 960 / 1450; } /* keep ratio so looks like tiles stacked */
+    .row{
+      flex-direction:column;
+      max-width:900px;
+    }
   }
-
-  /* helper placeholders for demo backgrounds (replace these in HTML) */
-  .bg-num{ background-image: linear-gradient(180deg,#0b1220,#071026); }
-  .bg-ramal{ background-image: linear-gradient(180deg,#09121b,#041018); }
 </style>
 </head>
 <body>
   <div class="full-bleed">
     <div class="row">
-      <!-- TILE 1: Numerology -->
-      <a class="tile" href="https://your-site.example/numerology" target="_blank" rel="noopener">
-        <!-- Replace background-image URL below with your final 960x1450 image -->
-        <span class="visual bg-num" style="background-image: url('numerology-960x1450.jpg');"></span>
+
+      <!-- NUMEROLOGY TILE -->
+      <a class="tile" href="#" target="_blank">
+        <span class="visual" style="background-image:url('numerology-960x1450.jpg.gif');"></span>
         <div class="meta">
           <h3>Numerology</h3>
           <p>Personal name & life-path clarity. Click to book.</p>
         </div>
       </a>
 
-      <!-- TILE 2: Ramal -->
-      <a class="tile" href="https://your-site.example/ramal" target="_blank" rel="noopener">
-        <!-- Replace background-image URL below with your final 960x1450 image -->
-        <span class="visual bg-ramal" style="background-image: url('ramal-960x1450.jpg');"></span>
+      <!-- RAMAL TILE -->
+      <a class="tile" href="#" target="_blank">
+        <span class="visual" style="background-image:url('ramal-960x1450.jpg.gif');"></span>
         <div class="meta">
           <h3>Ramal Prashnottari</h3>
           <p>Ancient question-based guidance without birth details.</p>
         </div>
       </a>
+
     </div>
   </div>
 </body>
