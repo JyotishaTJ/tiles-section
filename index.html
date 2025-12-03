@@ -9,55 +9,67 @@
     --page-bg:#fbf7f2;
     --shadow:rgba(2,6,23,0.10);
     --text-dark:#0b1320;
-    --text-muted:#3f4a55;
-    --accent:#c98f2b;
   }
-  html,body{margin:0;padding:0;background:var(--page-bg);font-family:Inter,system-ui,Arial;color:var(--text-dark);}
-  .full-bleed{width:100%;min-height:100vh;display:flex;justify-content:center;}
-  .row{width:100%;max-width:1600px;display:flex;gap:10px;padding:0;box-sizing:border-box;}
-  a.tile{flex:1;text-decoration:none;color:inherit;display:block;overflow:hidden;}
-  .visual-img{width:100%;height:auto;display:block;border-radius:4px;box-shadow:0 6px 22px var(--shadow);object-fit:cover;}
-  .meta{padding:16px;}
-  .meta h3{margin:0 0 8px;font-size:22px;font-weight:700;}
-  .meta p{margin:0;font-size:14px;color:var(--text-muted);line-height:1.4;}
-  .cta{margin-top:12px;display:inline-block;background:var(--accent);padding:8px 14px;color:#0b1320;border-radius:8px;font-weight:700;font-size:13px;}
-  @media (max-width:900px){.row{flex-direction:column;}}
+  html,body{
+    margin:0;
+    padding:0;
+    background:var(--page-bg);
+    font-family:Inter,system-ui,Arial;
+    color:var(--text-dark);
+  }
+  .full-bleed{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+  }
+  .row{
+    width:100%;
+    max-width:1600px;
+    display:flex;
+    gap:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+  a.tile{
+    flex:1;
+    text-decoration:none;
+    color:inherit;
+    display:block;
+    overflow:hidden;
+    position:relative;
+  }
+  .visual-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
 </style>
 </head>
 <body>
+
   <div class="full-bleed">
     <div class="row">
 
-      <!-- NUMEROLOGY TILE -->
+      <!-- NUMEROLOGY TILE (opens in SAME tab) -->
       <a class="tile"
-         href="https://www.jyotishitusharjoshi.in/services/numberology"
-         target="_blank" rel="noopener noreferrer">
-        <!-- explicit raw URL to ensure fetch -->
+         href="https://www.jyotishitusharjoshi.in/services/numberology">
         <img class="visual-img"
              src="https://raw.githubusercontent.com/JyotishaTJ/tiles-section/main/numerology-960x1450.jpg.gif"
-             alt="Numerology tile">
-        <div class="meta">
-          <h3>Numerology</h3>
-          <p>Personal name & life-path clarity. Click to book.</p>
-          <span class="cta">Book Numerology</span>
-        </div>
+             alt="Numerology">
       </a>
 
-      <!-- RAMAL TILE -->
+      <!-- RAMAL TILE (opens in SAME tab) -->
       <a class="tile"
-         href="https://rzp.io/rzp/OWqkSE8"
-         target="_blank" rel="noopener noreferrer">
+         href="https://rzp.io/rzp/OWqkSE8">
         <img class="visual-img"
              src="https://raw.githubusercontent.com/JyotishaTJ/tiles-section/main/ramal-960x1450.jpg.gif"
-             alt="Ramal tile">
-        <div class="meta">
-          <h3>Ramal Prashnottari</h3>
-          <p>Ancient question-based guidance without birth details.</p>
-          <span class="cta">Book Ramal</span>
-        </div>
+             alt="Ramal Prashnottari">
       </a>
 
     </div>
   </div>
+
 </body>
 </html>
