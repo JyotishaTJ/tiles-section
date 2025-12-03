@@ -16,8 +16,7 @@
   .full-bleed{width:100%;min-height:100vh;display:flex;justify-content:center;}
   .row{width:100%;max-width:1600px;display:flex;gap:10px;padding:0;box-sizing:border-box;}
   a.tile{flex:1;text-decoration:none;color:inherit;display:block;overflow:hidden;}
-  .visual{width:100%;aspect-ratio:960/1450;background-size:cover;background-position:center;border-radius:4px;box-shadow:0 6px 22px var(--shadow);transition:0.25s ease;}
-  a.tile:hover .visual{transform:translateY(-6px);box-shadow:0 14px 36px rgba(0,0,0,0.20);}
+  .visual-img{width:100%;height:auto;display:block;border-radius:4px;box-shadow:0 6px 22px var(--shadow);object-fit:cover;}
   .meta{padding:16px;}
   .meta h3{margin:0 0 8px;font-size:22px;font-weight:700;}
   .meta p{margin:0;font-size:14px;color:var(--text-muted);line-height:1.4;}
@@ -29,12 +28,14 @@
   <div class="full-bleed">
     <div class="row">
 
-      <!numerology-960x1450.jpg.gif>
+      <!-- NUMEROLOGY TILE -->
       <a class="tile"
          href="https://www.jyotishitusharjoshi.in/services/numberology"
          target="_blank" rel="noopener noreferrer">
-        <span class="visual"
-          style="background-image:url('https://raw.githubusercontent.com/JyotishaTJ/tiles-section/main/numerology-960x1450.jpg.gif');"></span>
+        <!-- explicit raw URL to ensure fetch -->
+        <img class="visual-img"
+             src="https://raw.githubusercontent.com/JyotishaTJ/tiles-section/main/numerology-960x1450.jpg.gif"
+             alt="Numerology tile">
         <div class="meta">
           <h3>Numerology</h3>
           <p>Personal name & life-path clarity. Click to book.</p>
@@ -42,12 +43,13 @@
         </div>
       </a>
 
-      <!ramal-960x1450.jpg.gif>
+      <!-- RAMAL TILE -->
       <a class="tile"
          href="https://rzp.io/rzp/OWqkSE8"
          target="_blank" rel="noopener noreferrer">
-        <span class="visual"
-          style="background-image:url('https://raw.githubusercontent.com/JyotishaTJ/tiles-section/main/ramal-960x1450.jpg.gif');"></span>
+        <img class="visual-img"
+             src="https://raw.githubusercontent.com/JyotishaTJ/tiles-section/main/ramal-960x1450.jpg.gif"
+             alt="Ramal tile">
         <div class="meta">
           <h3>Ramal Prashnottari</h3>
           <p>Ancient question-based guidance without birth details.</p>
