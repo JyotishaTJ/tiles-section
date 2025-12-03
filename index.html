@@ -57,7 +57,7 @@
   @media (max-width:899px){
     .row{flex-direction:column;}
     /* cap tile height so it doesn't scroll too long on phones */
-    a.tile{min-height:55vh; /* each tile roughly ~55% of viewport height */ }
+    a.tile{min-height:55vh;} /* each tile roughly ~55% of viewport height */
     .visual-img{width:100%;height:100%;object-fit:cover;}
     /* show overlay (title + CTA) on mobile */
     .overlay{display:flex;}
@@ -74,8 +74,12 @@
     <div class="row">
 
       <!-- NUMEROLOGY TILE (opens in new tab) -->
-      <a class="tile" href="https://www.jyotishitusharjoshi.in/services/numberology" target="_blank" rel="noopener noreferrer">
-        <img class="visual-img" src="https://raw.githubusercontent.com/JyotishaTJ/tiles-section/main/numerology-960x1450.jpg.gif" alt="Numerology">
+      <a class="tile"
+         href="https://www.jyotishitusharjoshi.in/services/numberology"
+         target="_blank" rel="noopener noreferrer">
+        <img class="visual-img"
+             src="https://raw.githubusercontent.com/JyotishaTJ/tiles-section/main/numerology-960x1450.jpg.gif"
+             alt="Numerology" loading="lazy">
         <!-- overlay is visible on mobile; hidden on desktop -->
         <div class="overlay" aria-hidden="false">
           <h3>Numerology</h3>
@@ -85,8 +89,12 @@
       </a>
 
       <!-- RAMAL TILE (opens in new tab) -->
-      <a class="tile" href="https://rzp.io/rzp/OWqkSE8" target="_blank" rel="noopener noreferrer">
-        <img class="visual-img" src="https://raw.githubusercontent.com/JyotishaTJ/tiles-section/main/ramal-960x1450.jpg.gif" alt="Ramal Prashnottari">
+      <a class="tile"
+         href="https://rzp.io/rzp/OWqkSE8"
+         target="_blank" rel="noopener noreferrer">
+        <img class="visual-img"
+             src="https://raw.githubusercontent.com/JyotishaTJ/tiles-section/main/ramal-960x1450.jpg.gif"
+             alt="Ramal Prashnottari" loading="lazy">
         <div class="overlay" aria-hidden="false">
           <h3>Ramal Prashnottari</h3>
           <p>An ancient question-based divination system that gives clear guidance without birth details.</p>
