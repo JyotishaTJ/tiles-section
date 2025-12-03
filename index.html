@@ -3,73 +3,98 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Numerology & Ramal — Tiles</title>
+<title>Numerology & Ramal — Tiles (Mobile friendly)</title>
 <style>
   :root{
     --page-bg:#fbf7f2;
     --shadow:rgba(2,6,23,0.10);
     --text-dark:#0b1320;
+    --muted:#3f4a55;
+    --accent:#c98f2b;
   }
-  html,body{
-    margin:0;
-    padding:0;
-    background:var(--page-bg);
-    font-family:Inter,system-ui,Arial;
-    color:var(--text-dark);
-  }
-  .full-bleed{
-    width:100%;
-    min-height:100vh;
+
+  /* Basic reset */
+  html,body{margin:0;padding:0;background:var(--page-bg);font-family:Inter,system-ui,Arial;color:var(--text-dark);-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+
+  /* Container */
+  .full-bleed{width:100%;min-height:100vh;display:flex;justify-content:center;box-sizing:border-box;padding:0 0;}
+  .row{width:100%;max-width:1600px;display:flex;gap:0;padding:0;margin:0;box-sizing:border-box;}
+
+  /* Tile */
+  a.tile{flex:1;text-decoration:none;color:inherit;display:block;position:relative;overflow:hidden;}
+  /* Image keeps aspect, but we manage max-height on mobile */
+  .visual-img{width:100%;height:100%;display:block;object-fit:cover;vertical-align:middle;transition:transform .25s ease;will-change:transform;}
+
+  /* overlay for mobile (appears over image) */
+  .overlay{
+    position:absolute;
+    left:0;right:0;
+    bottom:0;
+    padding:14px;
+    background: linear-gradient(0deg, rgba(6,8,10,0.66) 0%, rgba(6,8,10,0.16) 60%, rgba(6,8,10,0) 100%);
+    color:#fff;
     display:flex;
-    justify-content:center;
+    flex-direction:column;
+    gap:8px;
   }
-  .row{
-    width:100%;
-    max-width:1600px;
-    display:flex;
-    gap:0;
-    padding:0;
-    box-sizing:border-box;
+  .overlay h3{margin:0;font-size:18px;font-weight:800;line-height:1.05;letter-spacing:0.2px;}
+  .overlay p{margin:0;font-size:13px;color:rgba(255,255,255,0.92);opacity:0.95;}
+  .overlay .cta{display:inline-block;margin-top:6px;background:var(--accent);padding:8px 12px;border-radius:8px;font-weight:700;color:#08121a;text-decoration:none;font-size:13px;}
+
+  /* Desktop-specific styles */
+  @media (min-width: 900px){
+    .row{flex-direction:row;}
+    a.tile{min-height:70vh;} /* tall tiles on desktop */
+    .visual-img{height:100%;} 
+    /* hide mobile overlays on desktop */
+    .overlay{display:none;}
+    /* subtle hover */
+    a.tile:hover .visual-img{transform:scale(1.02);}
   }
-  a.tile{
-    flex:1;
-    text-decoration:none;
-    color:inherit;
-    display:block;
-    overflow:hidden;
-    position:relative;
+
+  /* Mobile-specific styles */
+  @media (max-width:899px){
+    .row{flex-direction:column;}
+    /* cap tile height so it doesn't scroll too long on phones */
+    a.tile{min-height:55vh; /* each tile roughly ~55% of viewport height */ }
+    .visual-img{width:100%;height:100%;object-fit:cover;}
+    /* show overlay (title + CTA) on mobile */
+    .overlay{display:flex;}
+    /* remove hover transforms for touch */
+    a.tile:hover .visual-img{transform:none;}
   }
-  .visual-img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-  }
+
+  /* Accessibility focus */
+  a.tile:focus{outline:3px solid rgba(201,143,43,0.15);outline-offset:3px;}
 </style>
 </head>
 <body>
-
   <div class="full-bleed">
     <div class="row">
 
-      <!-- NUMEROLOGY TILE (opens in SAME tab) -->
-      <a class="tile"
-         href="https://www.jyotishitusharjoshi.in/services/numberology">
-        <img class="visual-img"
-             src="https://raw.githubusercontent.com/JyotishaTJ/tiles-section/main/numerology-960x1450.jpg.gif"
-             alt="Numerology">
+      <!-- NUMEROLOGY TILE (opens in new tab) -->
+      <a class="tile" href="https://www.jyotishitusharjoshi.in/services/numberology" target="_blank" rel="noopener noreferrer">
+        <img class="visual-img" src="https://raw.githubusercontent.com/JyotishaTJ/tiles-section/main/numerology-960x1450.jpg.gif" alt="Numerology">
+        <!-- overlay is visible on mobile; hidden on desktop -->
+        <div class="overlay" aria-hidden="false">
+          <h3>Numerology</h3>
+          <p>A structured analysis of your name and numbers to understand patterns & direction.</p>
+          <span class="cta">Book Numerology</span>
+        </div>
       </a>
 
-      <!-- RAMAL TILE (opens in SAME tab) -->
-      <a class="tile"
-         href="https://rzp.io/rzp/OWqkSE8">
-        <img class="visual-img"
-             src="https://raw.githubusercontent.com/JyotishaTJ/tiles-section/main/ramal-960x1450.jpg.gif"
-             alt="Ramal Prashnottari">
+      <!-- RAMAL TILE (opens in new tab) -->
+      <a class="tile" href="https://rzp.io/rzp/OWqkSE8" target="_blank" rel="noopener noreferrer">
+        <img class="visual-img" src="https://raw.githubusercontent.com/JyotishaTJ/tiles-section/main/ramal-960x1450.jpg.gif" alt="Ramal Prashnottari">
+        <div class="overlay" aria-hidden="false">
+          <h3>Ramal Prashnottari</h3>
+          <p>An ancient question-based divination system that gives clear guidance without birth details.</p>
+          <span class="cta">Book Ramal</span>
+        </div>
       </a>
 
     </div>
   </div>
-
 </body>
 </html>
