@@ -23,7 +23,6 @@
 
   /* Tile */
   a.tile{flex:1;text-decoration:none;color:inherit;display:block;position:relative;overflow:hidden;}
-  /* Image keeps aspect, but we manage max-height on mobile */
   .visual-img{width:100%;height:100%;display:block;object-fit:cover;vertical-align:middle;transition:transform .25s ease;will-change:transform;}
 
   /* overlay for mobile (appears over image) */
@@ -45,23 +44,18 @@
   /* Desktop-specific styles */
   @media (min-width: 900px){
     .row{flex-direction:row;}
-    a.tile{min-height:70vh;} /* tall tiles on desktop */
-    .visual-img{height:100%;} 
-    /* hide mobile overlays on desktop */
+    a.tile{min-height:70vh;}
+    .visual-img{height:100%;}
     .overlay{display:none;}
-    /* subtle hover */
     a.tile:hover .visual-img{transform:scale(1.02);}
   }
 
   /* Mobile-specific styles */
   @media (max-width:899px){
     .row{flex-direction:column;}
-    /* cap tile height so it doesn't scroll too long on phones */
-    a.tile{min-height:55vh;} /* each tile roughly ~55% of viewport height */
+    a.tile{min-height:55vh;}
     .visual-img{width:100%;height:100%;object-fit:cover;}
-    /* show overlay (title + CTA) on mobile */
     .overlay{display:flex;}
-    /* remove hover transforms for touch */
     a.tile:hover .visual-img{transform:none;}
   }
 
@@ -73,14 +67,13 @@
   <div class="full-bleed">
     <div class="row">
 
-      <!-- NUMEROLOGY TILE (opens in new tab) -->
+      <!-- NUMEROLOGY TILE -->
       <a class="tile"
          href="https://www.jyotishitusharjoshi.in/services/numberology"
          target="_blank" rel="noopener noreferrer">
         <img class="visual-img"
              src="https://raw.githubusercontent.com/JyotishaTJ/tiles-section/main/numerology-960x1450.jpg.gif"
              alt="Numerology" loading="lazy">
-        <!-- overlay is visible on mobile; hidden on desktop -->
         <div class="overlay" aria-hidden="false">
           <h3>Numerology</h3>
           <p>A structured analysis of your name and numbers to understand patterns & direction.</p>
@@ -88,9 +81,9 @@
         </div>
       </a>
 
-      <!-- RAMAL TILE (opens in new tab) -->
+      <!-- RAMAL TILE — Updated Razorpay Link -->
       <a class="tile"
-         href="https://rzp.io/rzp/OWqkSE8"
+         href="https://rzp.io/rzp/RAMSPL"
          target="_blank" rel="noopener noreferrer">
         <img class="visual-img"
              src="https://raw.githubusercontent.com/JyotishaTJ/tiles-section/main/ramal-960x1450.jpg.gif"
